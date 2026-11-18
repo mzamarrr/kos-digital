@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.db
+uploads/
+.env
+.venv/
+venv/
+.vscode/
+.idea/
+sample_bukti.png
