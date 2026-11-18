@@ -4,44 +4,311 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kos Digital · Saung Neglasari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#f4f3ee;--card:#fff;--ink:#13263f;--mut:#5b6b7d;--line:#e0ded6;--navy:#1b3a5c;--gold:#e3a33b;--teal:#1f6f7a;--bad:#b3402f;--ok:#2d7a4f}
-  @media (prefers-color-scheme:dark){:root{--bg:#0f1b2b;--card:#17283d;--ink:#eef1f4;--mut:#9fb0c2;--line:#2a3d55}}
-  *{box-sizing:border-box}
-  body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
-  header{background:var(--navy);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-  header h1{font-size:16px;margin:0}
-  .header-actions{display:flex;align-items:center;gap:8px}
-  main{max-width:960px;margin:0 auto;padding:16px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
-  h2{font-size:17px;margin:0 0 12px}
-  label{display:block;font-size:13px;color:var(--mut);margin:8px 0 2px}
-  input,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
-  button{padding:9px 14px;border:0;border-radius:8px;background:var(--navy);color:#fff;font:inherit;cursor:pointer}
-  button.alt{background:var(--gold);color:#1a1a1a}button.sm{padding:5px 10px;font-size:13px}button.bad{background:var(--bad)}
-  nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-  nav button{background:var(--card);color:var(--ink);border:1px solid var(--line);padding:6px 12px}nav button.on{background:var(--navy);color:#fff}
-  .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
-  @media (max-width:480px){
-    header h1{font-size:15px}
-    .row{grid-template-columns:1fr}
+  :root {
+    --primary: #10b981;
+    --primary-hover: #059669;
+    --primary-light: #ecfdf5;
+    --primary-border: #a7f3d0;
+    --navy: #0f172a;
+    --navy-sub: #1e293b;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --ink: #0f172a;
+    --mut: #64748b;
+    --line: #e2e8f0;
+    --gold: #d97706;
+    --gold-light: #fef3c7;
+    --bad: #dc2626;
+    --bad-light: #fee2e2;
+    --ok: #059669;
+    --ok-light: #d1fae5;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+    --radius: 12px;
   }
-  .tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}
-  th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--mut);font-weight:600}
-  .pill{padding:2px 10px;border-radius:99px;font-size:12px;background:var(--line)}
-  .Lunas{background:#cfe9d9;color:#1d5a37}.Ditolak{background:#f3d3cd;color:#8a2c1e}.Menunggu{background:#fbe6bd;color:#6b4a00}
-  #toast{position:fixed;bottom:16px;left:16px;right:16px;max-width:420px;margin:auto;background:#222;color:#fff;padding:12px;border-radius:10px;display:none}
-  .hide{display:none}
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1329;
+      --card: #131f37;
+      --ink: #f1f5f9;
+      --mut: #94a3b8;
+      --line: #1e293b;
+      --primary-light: #064e3b;
+      --primary-border: #047857;
+      --gold-light: #78350f;
+      --bad-light: #7f1d1d;
+      --ok-light: #064e3b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 15px/1.6 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-icon {
+    width: 32px; height: 32px;
+    background: var(--primary);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 17px; color: #fff;
+  }
+  header h1 { font-size: 17px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+  header .sub { font-size: 12px; color: #94a3b8; font-weight: 400; display: block; }
+  
+  .header-actions { display: flex; align-items: center; gap: 10px; }
+  .role-badge {
+    background: rgba(255, 255, 255, 0.12);
+    color: #e2e8f0;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  main { max-width: 980px; margin: 0 auto; padding: 20px 16px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease;
+  }
+  .card:hover { box-shadow: var(--shadow); }
+  h2 { font-size: 17px; font-weight: 700; margin: 0 0 14px; color: var(--ink); letter-spacing: -0.01em; }
+  
+  label { display: block; font-size: 13px; font-weight: 600; color: var(--mut); margin: 10px 0 4px; }
+  input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+  }
+
+  button {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  button:hover { background: var(--primary-hover); transform: translateY(-1px); }
+  button:active { transform: translateY(0); }
+  button.alt { background: var(--gold); color: #fff; }
+  button.alt:hover { background: #b45309; }
+  button.sm { padding: 6px 12px; font-size: 12px; border-radius: 6px; }
+  button.bad { background: var(--bad); }
+  button.bad:hover { background: #b91c1c; }
+  button.outline { background: transparent; border: 1px solid var(--line); color: var(--ink); }
+  button.outline:hover { background: var(--bg); }
+
+  nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    background: rgba(226, 232, 240, 0.5);
+    padding: 6px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--line);
+  }
+  nav button {
+    background: transparent;
+    color: var(--mut);
+    border: none;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13.5px;
+  }
+  nav button:hover { color: var(--ink); background: rgba(255, 255, 255, 0.6); }
+  nav button.on {
+    background: var(--card);
+    color: var(--primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+  }
+  .stat-card .label { font-size: 12.5px; color: var(--mut); font-weight: 600; display: block; margin-bottom: 4px; }
+  .stat-card .val { font-size: 20px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+  .stat-card .val.ok { color: var(--ok); }
+  .stat-card .val.bad { color: var(--bad); }
+  .stat-card .val.gold { color: var(--gold); }
+
+  .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; align-items: end; }
+  .tablewrap { overflow-x: auto; margin-top: 8px; border-radius: 8px; border: 1px solid var(--line); }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { background: rgba(248, 250, 252, 0.8); color: var(--mut); font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.03em; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(241, 245, 249, 0.5); }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+  .pill.Lunas { background: var(--ok-light); color: var(--ok); }
+  .pill.Lunas::before { background: var(--ok); }
+  .pill.Ditolak { background: var(--bad-light); color: var(--bad); }
+  .pill.Ditolak::before { background: var(--bad); }
+  .pill.Menunggu { background: var(--gold-light); color: var(--gold); }
+  .pill.Menunggu::before { background: var(--gold); }
+  .pill.Belum { background: #f1f5f9; color: #475569; }
+  .pill.Belum::before { background: #94a3b8; }
+
+  /* Info rekening transfer */
+  .rekening-box {
+    background: var(--primary-light);
+    border: 1px solid var(--primary-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .rekening-title { font-weight: 700; color: var(--primary-hover); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+
+  /* Invoice card item for penghuni */
+  .bill-card {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: var(--card);
+    transition: all 0.2s;
+  }
+  .bill-card:hover { border-color: var(--primary-border); }
+  .bill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .bill-amount { font-size: 18px; font-weight: 800; color: var(--ink); }
+
+  /* Modal preview */
+  .modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px; z-index: 1000;
+  }
+  .modal-content {
+    background: var(--card);
+    border-radius: 14px;
+    max-width: 540px; width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-md);
+    padding: 20px;
+  }
+  .modal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .modal-close {
+    background: none; border: none; font-size: 20px; color: var(--mut);
+    cursor: pointer; padding: 4px 8px; border-radius: 6px;
+  }
+  .modal-close:hover { background: var(--line); color: var(--ink); }
+
+  #toast {
+    position: fixed;
+    bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: #1e293b; color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600; font-size: 13.5px;
+    box-shadow: var(--shadow-md);
+    z-index: 1001;
+    display: none;
+  }
+  .hide { display: none !important; }
+
+  @media (max-width: 480px) {
+    header { padding: 12px 14px; }
+    header h1 { font-size: 15px; }
+    .row { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
-<header><h1>Kos Digital · Saung Neglasari</h1><div class="header-actions"><span id="who"></span><button id="logout" class="sm alt hide">Keluar</button></div></header>
+<header>
+  <div class="brand">
+    <div class="brand-icon">🏠</div>
+    <div>
+      <h1>Kos Digital</h1>
+      <span class="sub">Indekos Saung Neglasari</span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <span id="who" class="role-badge"></span>
+    <button id="logout" class="sm outline hide">Keluar</button>
+  </div>
+</header>
+
 <main>
-  <section id="login" class="card" style="max-width:380px;margin:40px auto">
-    <h2>Masuk</h2>
-    <label>Username</label><input id="u" autocomplete="username">
-    <label>Password</label><input id="p" type="password" autocomplete="current-password">
-    <p><button id="go">Masuk</button></p>
+  <section id="login" class="card" style="max-width:400px;margin:50px auto">
+    <div style="text-align:center;margin-bottom:20px">
+      <div style="font-size:36px;margin-bottom:6px">🔐</div>
+      <h2 style="margin:0">Masuk ke Akun</h2>
+      <p style="color:var(--mut);font-size:13px;margin:4px 0 0">Kelola kos atau pantau tagihan bulanan Anda</p>
+    </div>
+    <label>Username</label><input id="u" autocomplete="username" placeholder="Masukkan username">
+    <label>Password</label><input id="p" type="password" autocomplete="current-password" placeholder="Masukkan password">
+    <p style="margin-top:20px"><button id="go" style="width:100%">Masuk Sekarang</button></p>
   </section>
 
   <section id="app" class="hide">
@@ -49,7 +316,21 @@
     <div id="view"></div>
   </section>
 </main>
+
+<div id="bukti-modal" class="modal-backdrop hide">
+  <div class="modal-content">
+    <div class="modal-top">
+      <h3 style="margin:0;font-size:16px">Bukti Pembayaran</h3>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+    <div id="modal-preview-body" style="text-align:center">
+      <p style="color:var(--mut)">Memuat bukti...</p>
+    </div>
+  </div>
+</div>
+
 <div id="toast"></div>
+
 <script>
 let token = null, role = null, tab = null, editKamarId = null;
 const $ = s => document.querySelector(s);
@@ -73,7 +354,7 @@ $("#go").onclick = async () => {
     const d = await api("/login", {method: "POST", json: {username: $("#u").value, password: $("#p").value}});
     token = d.token; role = d.role;
     $("#login").classList.add("hide"); $("#app").classList.remove("hide"); $("#logout").classList.remove("hide");
-    $("#who").textContent = role === "admin" ? "Admin" : "Penghuni";
+    $("#who").textContent = role === "admin" ? "Admin Kos" : "Penghuni";
     const tabs = role === "admin" ? ["Tagihan","Kamar","Penghuni","Pesan","Rekap"] : ["Tagihan saya"];
     $("#tabs").innerHTML = tabs.map(t => `<button data-t="${t}">${t}</button>`).join("");
     $("#tabs").onclick = e => e.target.dataset.t && show(e.target.dataset.t);
@@ -82,6 +363,8 @@ $("#go").onclick = async () => {
 };
 $("#logout").onclick = () => location.reload();
 document.addEventListener("keydown", e => { if (e.key === "Enter" && !$("#login").classList.contains("hide")) $("#go").click(); });
+
+$("#modal-close").onclick = () => $("#bukti-modal").classList.add("hide");
 
 async function show(t) {
   tab = t;
@@ -93,80 +376,334 @@ const thisMonth = () => new Date().toISOString().slice(0, 7);
 const views = {
   async "Tagihan"() {
     const rows = await api("/tagihan");
-    return `<div class="card"><h2>Buat tagihan periode</h2><div class="row">
-      <input id="per" value="${thisMonth()}" placeholder="YYYY-MM"><button id="gen">Buat tagihan</button></div></div>
-      <div class="card"><h2>Daftar tagihan</h2><div class="tablewrap"><table><tr><th>Periode</th><th>Kamar</th><th>Penghuni</th><th>Jumlah</th><th>Jatuh tempo</th><th>Status</th><th></th></tr>` +
-      rows.map(r => `<tr><td>${r.periode}</td><td>${esc(r.kamar)}</td><td>${esc(r.nama)}</td><td>${rp(r.jumlah)}</td><td>${r.jatuh_tempo}</td><td>${pill(r.status)}</td><td>
-        ${r.status === "Menunggu verifikasi" ? `<button class="sm" data-bukti="${r.id}">Lihat bukti</button> ` : ""}
-        ${["Belum dibayar","Menunggu verifikasi"].includes(r.status) ? `<button class="sm" data-set="Lunas" data-id="${r.id}">Lunas</button> ` : ""}
-        ${r.status === "Menunggu verifikasi" ? `<button class="sm bad" data-set="Ditolak" data-id="${r.id}">Tolak</button>` : ""}</td></tr>`).join("") +
-      `</table></div></div>`;
+    const lunasRows = rows.filter(r => r.status === "Lunas");
+    const unpaidRows = rows.filter(r => r.status === "Belum dibayar" || r.status === "Ditolak");
+    const pendingRows = rows.filter(r => r.status === "Menunggu verifikasi");
+    const totalPemasukan = lunasRows.reduce((a, b) => a + Number(b.jumlah), 0);
+    const totalTunggakan = unpaidRows.reduce((a, b) => a + Number(b.jumlah), 0);
+
+    return `
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="label">Total Tagihan</span>
+          <span class="val">${rows.length} Tagihan</span>
+        </div>
+        <div class="stat-card">
+          <span class="label">Pemasukan Terkonfirmasi</span>
+          <span class="val ok">${rp(totalPemasukan)}</span>
+        </div>
+        <div class="stat-card">
+          <span class="label">Total Tunggakan</span>
+          <span class="val bad">${rp(totalTunggakan)}</span>
+        </div>
+        <div class="stat-card">
+          <span class="label">Perlu Verifikasi</span>
+          <span class="val gold">${pendingRows.length} Bukti</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Buat tagihan periode</h2>
+        <div class="row">
+          <div>
+            <label style="margin:0 0 4px">Pilih Periode (YYYY-MM)</label>
+            <input id="per" value="${thisMonth()}" placeholder="YYYY-MM">
+          </div>
+          <button id="gen">⚡ Terbitkan Tagihan</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Daftar Tagihan Seluruh Kamar</h2>
+        <div class="tablewrap">
+          <table>
+            <tr><th>Periode</th><th>Kamar</th><th>Penghuni</th><th>Jumlah</th><th>Jatuh tempo</th><th>Status</th><th>Aksi</th></tr>
+            ${rows.map(r => `<tr>
+              <td><b>${r.periode}</b></td>
+              <td>${esc(r.kamar)}</td>
+              <td>${esc(r.nama)}</td>
+              <td>${rp(r.jumlah)}</td>
+              <td>${r.jatuh_tempo}</td>
+              <td>${pill(r.status)}</td>
+              <td>
+                ${r.status === "Menunggu verifikasi" ? `<button class="sm alt" data-bukti="${r.id}">Lihat bukti</button> ` : ""}
+                ${["Belum dibayar","Menunggu verifikasi"].includes(r.status) ? `<button class="sm" data-set="Lunas" data-id="${r.id}">Lunas</button> ` : ""}
+                ${r.status === "Menunggu verifikasi" ? `<button class="sm bad" data-set="Ditolak" data-id="${r.id}">Tolak</button>` : ""}
+              </td>
+            </tr>`).join("")}
+          </table>
+        </div>
+      </div>`;
   },
+
   async "Kamar"() {
     const rows = await api("/kamar");
-    return `<div class="card"><h2>Tambah kamar</h2><div class="row">
-      <input id="kn" placeholder="Nomor"><input id="kl" type="number" placeholder="Lantai" value="1"><input id="kc" type="number" placeholder="Kapasitas" value="1">
-      <input id="kf" placeholder="Fasilitas"><input id="kt" type="number" placeholder="Tarif"><button id="addk">Simpan</button></div></div>
-      <div class="card"><div class="tablewrap"><table><tr><th>Nomor</th><th>Lantai</th><th>Kapasitas</th><th>Fasilitas</th><th>Tarif</th><th>Status</th><th></th></tr>` +
-      rows.map(r => `<tr><td>${esc(r.nomor)}</td><td>${r.lantai}</td><td>${r.kapasitas}</td><td>${esc(r.fasilitas)}</td><td>${rp(r.tarif)}</td><td>${r.status}</td>
-        <td><button class="sm" data-ke="${r.id}" data-n="${esc(r.nomor)}" data-l="${r.lantai}" data-c="${r.kapasitas}" data-f="${esc(r.fasilitas)}" data-t="${r.tarif}">Edit</button>
-        <button class="sm bad" data-kdel="${r.id}" data-n="${esc(r.nomor)}">Hapus</button></td></tr>`).join("") + `</table></div></div>`;
+    return `
+      <div class="card">
+        <h2>Tambah Kamar Baru</h2>
+        <div class="row">
+          <div><label>Nomor Kamar</label><input id="kn" placeholder="Contoh: A3"></div>
+          <div><label>Lantai</label><input id="kl" type="number" value="1"></div>
+          <div><label>Kapasitas</label><input id="kc" type="number" value="1"></div>
+          <div><label>Fasilitas</label><input id="kf" placeholder="Kasur, lemari, AC"></div>
+          <div><label>Tarif / Bulan</label><input id="kt" type="number" placeholder="850000"></div>
+          <button id="addk">Simpan Kamar</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Daftar Kamar</h2>
+        <div class="tablewrap">
+          <table>
+            <tr><th>Nomor</th><th>Lantai</th><th>Kapasitas</th><th>Fasilitas</th><th>Tarif</th><th>Status</th><th>Aksi</th></tr>
+            ${rows.map(r => `<tr>
+              <td><b>${esc(r.nomor)}</b></td>
+              <td>Lantai ${r.lantai}</td>
+              <td>${r.kapasitas} orang</td>
+              <td>${esc(r.fasilitas)}</td>
+              <td>${rp(r.tarif)}</td>
+              <td><span class="pill ${r.status === 'terisi' ? 'Lunas' : 'Belum'}">${r.status}</span></td>
+              <td>
+                <button class="sm outline" data-ke="${r.id}" data-n="${esc(r.nomor)}" data-l="${r.lantai}" data-c="${r.kapasitas}" data-f="${esc(r.fasilitas)}" data-t="${r.tarif}">Edit</button>
+                <button class="sm bad" data-kdel="${r.id}" data-n="${esc(r.nomor)}">Hapus</button>
+              </td>
+            </tr>`).join("")}
+          </table>
+        </div>
+      </div>`;
   },
+
   async "Penghuni"() {
     const [rows, kamar] = await Promise.all([api("/penghuni"), api("/kamar")]);
-    return `<div class="card"><h2>Tambah penghuni</h2><div class="row">
-      <input id="pn" placeholder="Nama"><input id="pw" placeholder="No. WhatsApp (628…)"><input id="pt" type="date">
-      <select id="pk">${kamar.map(k => `<option value="${k.id}">${esc(k.nomor)}</option>`).join("")}</select>
-      <input id="pu" placeholder="Username"><input id="pp" type="password" placeholder="Password awal (min 8)">
-      <label style="margin:0;display:flex;gap:6px;align-items:center"><input id="po" type="checkbox" style="width:auto">Setuju terima WA</label>
-      <button id="addp">Simpan</button></div></div>
-      <div class="card"><div class="tablewrap"><table><tr><th>Nama</th><th>Kamar</th><th>No. WA</th><th>Masuk</th><th>Status</th><th></th></tr>` +
-      rows.map(r => `<tr><td>${esc(r.nama)}</td><td>${esc(r.kamar)}</td><td>${esc(r.no_wa)}</td><td>${r.tgl_masuk}</td><td>${r.aktif ? "aktif" : "nonaktif"}</td>
-        <td>${r.aktif ? `<button class="sm bad" data-off="${r.id}">Nonaktifkan</button>` : ""}</td></tr>`).join("") + `</table></div></div>`;
+    return `
+      <div class="card">
+        <h2>Tambah Penghuni Baru</h2>
+        <div class="row">
+          <div><label>Nama Lengkap</label><input id="pn" placeholder="Nama lengkap"></div>
+          <div><label>No. WhatsApp</label><input id="pw" placeholder="6281xxxxxx"></div>
+          <div><label>Tanggal Masuk</label><input id="pt" type="date"></div>
+          <div>
+            <label>Pilih Kamar</label>
+            <select id="pk">${kamar.map(k => `<option value="${k.id}">Kamar ${esc(k.nomor)} (${rp(k.tarif)})</option>`).join("")}</select>
+          </div>
+          <div><label>Username Login</label><input id="pu" placeholder="Username"></div>
+          <div><label>Password Awal</label><input id="pp" type="password" placeholder="Min. 8 karakter"></div>
+          <div style="padding-bottom:10px">
+            <label style="margin:0;display:flex;gap:6px;align-items:center;cursor:pointer"><input id="po" type="checkbox" style="width:auto"> Setuju kirim WA</label>
+          </div>
+          <button id="addp">Daftarkan Penghuni</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Daftar Penghuni Aktif</h2>
+        <div class="tablewrap">
+          <table>
+            <tr><th>Nama</th><th>Kamar</th><th>WhatsApp</th><th>Tgl Masuk</th><th>Status</th><th>Aksi</th></tr>
+            ${rows.map(r => `<tr>
+              <td><b>${esc(r.nama)}</b></td>
+              <td>Kamar ${esc(r.kamar)}</td>
+              <td>${esc(r.no_wa)}</td>
+              <td>${r.tgl_masuk}</td>
+              <td><span class="pill ${r.aktif ? 'Lunas' : 'Ditolak'}">${r.aktif ? "Aktif" : "Nonaktif"}</span></td>
+              <td>${r.aktif ? `<button class="sm bad" data-off="${r.id}">Nonaktifkan</button>` : ""}</td>
+            </tr>`).join("")}
+          </table>
+        </div>
+      </div>`;
   },
+
   async "Pesan"() {
     const rows = await api("/pesan");
-    return `<div class="card"><h2>Pengingat WhatsApp</h2><p style="color:var(--mut);margin-top:0">Jalur manual: sistem menyiapkan teks, Anda menekan Kirim.</p>
-      <button id="remind">Jalankan pengingat</button></div>
-      <div class="card"><div class="tablewrap"><table><tr><th>Waktu</th><th>Penghuni</th><th>Status</th><th></th></tr>` +
-      rows.map(r => `<tr><td>${r.waktu.replace("T"," ")}</td><td>${esc(r.nama)}</td><td>${r.status_kirim}${r.keterangan ? " · " + esc(r.keterangan) : ""}</td><td>
-        ${r.status_kirim === "antri" ? `<a href="https://wa.me/${encodeURIComponent(r.no_wa)}?text=${encodeURIComponent(r.isi)}" target="_blank" rel="noopener"><button class="sm alt" data-sent="${r.id}">Kirim</button></a>` : ""}</td></tr>`).join("") + `</table></div></div>`;
+    return `
+      <div class="card">
+        <h2>Pengingat WhatsApp Otomatis</h2>
+        <p style="color:var(--mut);margin-top:0;font-size:13.5px">
+          Sistem otomatis menyusun template pengingat jatuh tempo. Klik <b>Kirim</b> untuk membuka WhatsApp langsung ke nomor penghuni.
+        </p>
+        <button id="remind">▶ Jalankan Pemeriksaan Pengingat</button>
+      </div>
+
+      <div class="card">
+        <h2>Antrean & Riwayat Pesan WhatsApp</h2>
+        <div class="tablewrap">
+          <table>
+            <tr><th>Waktu</th><th>Penghuni</th><th>Status Kirim</th><th>Aksi</th></tr>
+            ${rows.map(r => `<tr>
+              <td>${r.waktu.replace("T"," ")}</td>
+              <td><b>${esc(r.nama)}</b> (${esc(r.no_wa)})</td>
+              <td><span class="pill ${r.status_kirim === 'terkirim' ? 'Lunas' : 'Menunggu'}">${r.status_kirim}${r.keterangan ? " · " + esc(r.keterangan) : ""}</span></td>
+              <td>
+                ${r.status_kirim === "antri" ? `
+                  <a href="https://wa.me/${encodeURIComponent(r.no_wa)}?text=${encodeURIComponent(r.isi)}" target="_blank" rel="noopener">
+                    <button class="sm" style="background:#25d366" data-sent="${r.id}">💬 Buka WA & Kirim</button>
+                  </a>` : `<span style="color:var(--mut);font-size:12px">Sudah dikirim</span>`}
+              </td>
+            </tr>`).join("")}
+          </table>
+        </div>
+      </div>`;
   },
+
   async "Rekap"() {
-    return `<div class="card"><h2>Rekapitulasi</h2><div class="row"><input id="rp" value="${thisMonth()}"><button id="rk">Tampilkan</button></div><div id="rkout"></div></div>`;
+    return `
+      <div class="card">
+        <h2>Rekapitulasi Keuangan Bulanan</h2>
+        <div class="row">
+          <div>
+            <label style="margin:0 0 4px">Pilih Periode</label>
+            <input id="rp" value="${thisMonth()}">
+          </div>
+          <button id="rk">Tampilkan Rekap</button>
+        </div>
+        <div id="rkout" style="margin-top:16px"></div>
+      </div>`;
   },
+
   async "Tagihan saya"() {
     const rows = await api("/tagihan");
-    return `<div class="card"><h2>Tagihan saya</h2>` + (rows.length ? rows.map(r => `
-      <div style="border-top:1px solid var(--line);padding:12px 0"><b>${r.periode}</b> · ${rp(r.jumlah)} · jatuh tempo ${r.jatuh_tempo}<br>${pill(r.status)}
-      ${["Belum dibayar","Ditolak"].includes(r.status) ? `<p><input type="file" accept=".jpg,.jpeg,.png,.pdf" data-file="${r.id}"> <button class="sm" data-up="${r.id}">Unggah bukti</button></p>` : ""}</div>`).join("") : "<p>Belum ada tagihan.</p>") + `</div>`;
+    return `
+      <div class="rekening-box">
+        <div class="rekening-title">💳 Panduan Pembayaran Sewa Kos</div>
+        Silakan transfer biaya tagihan sewa ke salah satu rekening pengelola berikut:<br>
+        • <b>Bank BCA</b>: <code>123-456-7890</code> a.n. Saung Neglasari<br>
+        • <b>Bank Mandiri</b>: <code>987-654-3210</code> a.n. Saung Neglasari<br>
+        <small style="color:var(--mut)">Setelah transfer, unggah foto bukti transfer di bawah ini agar tagihan diverifikasi oleh pengelola.</small>
+      </div>
+
+      <div class="card">
+        <h2>Tagihan Saya</h2>
+        ${rows.length ? rows.map(r => `
+          <div class="bill-card">
+            <div class="bill-header">
+              <div>
+                <span style="font-size:13px;color:var(--mut);font-weight:600">Periode: ${r.periode}</span>
+                <div class="bill-amount">${rp(r.jumlah)}</div>
+              </div>
+              <div>${pill(r.status)}</div>
+            </div>
+            <div style="font-size:13px;color:var(--mut);margin-bottom:12px">
+              📅 Jatuh Tempo: <b>${r.jatuh_tempo}</b>
+            </div>
+            ${["Belum dibayar","Ditolak"].includes(r.status) ? `
+              <div style="background:var(--bg);padding:12px;border-radius:8px;border:1px dashed var(--line)">
+                <label style="margin:0 0 6px">Unggah Bukti Transfer (JPG/PNG/PDF maks 2 MB):</label>
+                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                  <input type="file" accept=".jpg,.jpeg,.png,.pdf" data-file="${r.id}" style="width:auto;flex:1">
+                  <button class="sm" data-up="${r.id}">Kirim Bukti</button>
+                </div>
+              </div>` : ""}
+          </div>`).join("") : "<p style='color:var(--mut)'>Belum ada tagihan.</p>"}
+      </div>`;
   },
 };
 
 const after = {};
+
 document.addEventListener("click", async e => {
   const b = e.target.closest("button"); if (!b) return;
   try {
-    if (b.id === "gen") { const d = await api("/tagihan/generate", {method:"POST", json:{periode:$("#per").value}}); toast(`Dibuat ${d.dibuat}, dilewati ${d.dilewati}`); show(tab); }
-    else if (b.dataset.set) { await api(`/tagihan/${b.dataset.id}/status`, {method:"PATCH", json:{status:b.dataset.set}}); show(tab); }
-    else if (b.dataset.bukti) { const r = await fetch(`/tagihan/${b.dataset.bukti}/bukti`, {headers:{Authorization:"Bearer "+token}}); if(!r.ok) throw new Error("Bukti tidak tersedia"); window.open(URL.createObjectURL(await r.blob())); }
-    else if (b.id === "addk") { const j = {nomor:$("#kn").value, lantai:+$("#kl").value, kapasitas:+$("#kc").value, fasilitas:$("#kf").value, tarif:+$("#kt").value};
-      if (editKamarId) { await api(`/kamar/${editKamarId}`, {method:"PATCH", json:j}); toast("Kamar diperbarui"); editKamarId = null; }
-      else { await api("/kamar", {method:"POST", json:j}); toast("Kamar disimpan"); }
-      show(tab); }
-    else if (b.dataset.ke) { editKamarId = b.dataset.ke; $("#kn").value = b.dataset.n; $("#kl").value = b.dataset.l; $("#kc").value = b.dataset.c; $("#kf").value = b.dataset.f; $("#kt").value = b.dataset.t;
-      $("#addk").textContent = "Perbarui kamar " + b.dataset.n; $("#kn").scrollIntoView({behavior:"smooth", block:"center"}); }
-    else if (b.dataset.kdel) { if (!confirm(`Hapus kamar ${b.dataset.n}?`)) return; await api(`/kamar/${b.dataset.kdel}`, {method:"DELETE"}); toast("Kamar dihapus"); show(tab); }
-    else if (b.id === "addp") { await api("/penghuni", {method:"POST", json:{nama:$("#pn").value, no_wa:$("#pw").value, tgl_masuk:$("#pt").value, kamar_id:+$("#pk").value, username:$("#pu").value, password:$("#pp").value, persetujuan_wa:$("#po").checked}}); toast("Penghuni disimpan"); show(tab); }
-    else if (b.dataset.off) { await api(`/penghuni/${b.dataset.off}/nonaktif`, {method:"PATCH"}); show(tab); }
-    else if (b.id === "remind") { const d = await api("/pengingat/jalankan", {method:"POST"}); toast(`Antrean dibuat ${d.dibuat}, terkirim ${d.terkirim}, gagal ${d.gagal}`); show(tab); }
-    else if (b.dataset.sent) { await api(`/pesan/${b.dataset.sent}/tandai-terkirim`, {method:"POST"}); setTimeout(() => show(tab), 500); }
-    else if (b.id === "rk") { const d = await api("/laporan/rekap?periode=" + encodeURIComponent($("#rp").value));
-      $("#rkout").innerHTML = `<p>Total ${d.total.jumlah_tagihan} tagihan (${rp(d.total.nominal)}) · Lunas ${d.lunas.jumlah_tagihan} (${rp(d.lunas.nominal)}) · <b>Tunggakan ${d.tunggakan.jumlah_tagihan} (${rp(d.tunggakan.nominal)})</b></p>` +
-      `<div class="tablewrap"><table><tr><th>Kamar</th><th>Nama</th><th>Status</th><th>Jumlah</th></tr>${d.tunggakan.daftar.map(x=>`<tr><td>${esc(x.kamar)}</td><td>${esc(x.nama)}</td><td>${esc(x.status)}</td><td>${rp(x.jumlah)}</td></tr>`).join("")}</table></div>`; }
-    else if (b.dataset.up) { const f = document.querySelector(`[data-file="${b.dataset.up}"]`).files[0]; if (!f) throw new Error("Pilih file dulu");
-      const fd = new FormData(); fd.append("file", f); await api(`/tagihan/${b.dataset.up}/bukti`, {method:"POST", body: fd}); toast("Bukti terunggah, menunggu verifikasi"); show(tab); }
-  } catch (err) { toast(err.message); }
+    if (b.id === "gen") {
+      const d = await api("/tagihan/generate", {method: "POST", json: {periode: $("#per").value}});
+      toast(`Dibuat ${d.dibuat}, dilewati ${d.dilewati}`);
+      show(tab);
+    }
+    else if (b.dataset.set) {
+      await api(`/tagihan/${b.dataset.id}/status`, {method: "PATCH", json: {status: b.dataset.set}});
+      toast(`Tagihan berhasil ditandai ${b.dataset.set}`);
+      show(tab);
+    }
+    else if (b.dataset.bukti) {
+      const r = await fetch(`/tagihan/${b.dataset.bukti}/bukti`, {headers: {Authorization: "Bearer " + token}});
+      if (!r.ok) throw new Error("Bukti tidak tersedia");
+      const blob = await r.blob();
+      const objUrl = URL.createObjectURL(blob);
+      if (blob.type.includes("pdf")) {
+        $("#modal-preview-body").innerHTML = `<iframe src="${objUrl}" style="width:100%;height:400px;border:none"></iframe>`;
+      } else {
+        $("#modal-preview-body").innerHTML = `<img src="${objUrl}" style="max-width:100%;max-height:420px;border-radius:8px">`;
+      }
+      $("#bukti-modal").classList.remove("hide");
+    }
+    else if (b.id === "addk") {
+      const j = {nomor: $("#kn").value, lantai: +$("#kl").value, kapasitas: +$("#kc").value, fasilitas: $("#kf").value, tarif: +$("#kt").value};
+      if (editKamarId) {
+        await api(`/kamar/${editKamarId}`, {method: "PATCH", json: j});
+        toast("Kamar diperbarui");
+        editKamarId = null;
+      } else {
+        await api("/kamar", {method: "POST", json: j});
+        toast("Kamar disimpan");
+      }
+      show(tab);
+    }
+    else if (b.dataset.ke) {
+      editKamarId = b.dataset.ke;
+      $("#kn").value = b.dataset.n; $("#kl").value = b.dataset.l; $("#kc").value = b.dataset.c; $("#kf").value = b.dataset.f; $("#kt").value = b.dataset.t;
+      $("#addk").textContent = "Perbarui Kamar " + b.dataset.n;
+      $("#kn").scrollIntoView({behavior: "smooth", block: "center"});
+    }
+    else if (b.dataset.kdel) {
+      if (!confirm(`Hapus kamar ${b.dataset.n}?`)) return;
+      await api(`/kamar/${b.dataset.kdel}`, {method: "DELETE"});
+      toast("Kamar dihapus");
+      show(tab);
+    }
+    else if (b.id === "addp") {
+      await api("/penghuni", {method: "POST", json: {
+        nama: $("#pn").value, no_wa: $("#pw").value, tgl_masuk: $("#pt").value,
+        kamar_id: +$("#pk").value, username: $("#pu").value, password: $("#pp").value,
+        persetujuan_wa: $("#po").checked
+      }});
+      toast("Penghuni disimpan");
+      show(tab);
+    }
+    else if (b.dataset.off) {
+      await api(`/penghuni/${b.dataset.off}/nonaktif`, {method: "PATCH"});
+      toast("Status penghuni dinonaktifkan");
+      show(tab);
+    }
+    else if (b.id === "remind") {
+      const d = await api("/pengingat/jalankan", {method: "POST"});
+      toast(`Antrean dibuat ${d.dibuat}, terkirim ${d.terkirim}, gagal ${d.gagal}`);
+      show(tab);
+    }
+    else if (b.dataset.sent) {
+      await api(`/pesan/${b.dataset.sent}/tandai-terkirim`, {method: "POST"});
+      setTimeout(() => show(tab), 500);
+    }
+    else if (b.id === "rk") {
+      const d = await api("/laporan/rekap?periode=" + encodeURIComponent($("#rp").value));
+      $("#rkout").innerHTML = `
+        <div class="stat-grid" style="margin-top:14px">
+          <div class="stat-card"><span class="label">Total Tagihan</span><span class="val">${d.total.jumlah_tagihan} (${rp(d.total.nominal)})</span></div>
+          <div class="stat-card"><span class="label">Sudah Lunas</span><span class="val ok">${d.lunas.jumlah_tagihan} (${rp(d.lunas.nominal)})</span></div>
+          <div class="stat-card"><span class="label">Sisa Tunggakan</span><span class="val bad">${d.tunggakan.jumlah_tagihan} (${rp(d.tunggakan.nominal)})</span></div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <tr><th>Kamar</th><th>Nama</th><th>Status</th><th>Jumlah</th></tr>
+            ${d.tunggakan.daftar.map(x => `<tr>
+              <td><b>${esc(x.kamar)}</b></td>
+              <td>${esc(x.nama)}</td>
+              <td>${pill(x.status)}</td>
+              <td>${rp(x.jumlah)}</td>
+            </tr>`).join("")}
+          </table>
+        </div>`;
+    }
+    else if (b.dataset.up) {
+      const f = document.querySelector(`[data-file="${b.dataset.up}"]`).files[0];
+      if (!f) throw new Error("Pilih file bukti transfer terlebih dahulu");
+      const fd = new FormData();
+      fd.append("file", f);
+      await api(`/tagihan/${b.dataset.up}/bukti`, {method: "POST", body: fd});
+      toast("Bukti terunggah, menunggu verifikasi admin");
+      show(tab);
+    }
+  } catch (err) {
+    toast(err.message);
+  }
 });
 </script>
 </body>
