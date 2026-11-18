@@ -57,11 +57,11 @@
   header {
     background: var(--navy);
     color: #fff;
-    padding: 14px 20px;
+    padding: 12px 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   }
   .brand { display: flex; align-items: center; gap: 10px; }
@@ -71,43 +71,44 @@
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     font-weight: 800; font-size: 17px; color: #fff;
+    flex-shrink: 0;
   }
-  header h1 { font-size: 17px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
-  header .sub { font-size: 12px; color: #94a3b8; font-weight: 400; display: block; }
+  header h1 { font-size: 16px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+  header .sub { font-size: 11.5px; color: #94a3b8; font-weight: 400; display: block; }
   
-  .header-actions { display: flex; align-items: center; gap: 10px; }
+  .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
   .role-badge {
     background: rgba(255, 255, 255, 0.12);
     color: #e2e8f0;
     padding: 4px 10px;
     border-radius: 99px;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 600;
   }
 
-  main { max-width: 980px; margin: 0 auto; padding: 20px 16px; }
+  main { max-width: 980px; margin: 0 auto; padding: 18px 14px; }
   .card {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 18px;
+    margin-bottom: 16px;
     box-shadow: var(--shadow-sm);
     transition: box-shadow 0.2s ease;
   }
   .card:hover { box-shadow: var(--shadow); }
-  h2 { font-size: 17px; font-weight: 700; margin: 0 0 14px; color: var(--ink); letter-spacing: -0.01em; }
+  h2 { font-size: 16px; font-weight: 700; margin: 0 0 12px; color: var(--ink); letter-spacing: -0.01em; }
   
-  label { display: block; font-size: 13px; font-weight: 600; color: var(--mut); margin: 10px 0 4px; }
+  label { display: block; font-size: 12.5px; font-weight: 600; color: var(--mut); margin: 8px 0 3px; }
   input, select {
     width: 100%;
-    padding: 10px 12px;
+    padding: 9px 12px;
     border: 1px solid var(--line);
     border-radius: 8px;
     background: var(--bg);
     color: var(--ink);
     font: inherit;
-    font-size: 14px;
+    font-size: 13.5px;
     transition: all 0.2s;
   }
   input:focus, select:focus {
@@ -117,14 +118,14 @@
   }
 
   button {
-    padding: 10px 16px;
+    padding: 9px 15px;
     border: 0;
     border-radius: 8px;
     background: var(--primary);
     color: #fff;
     font: inherit;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13.5px;
     cursor: pointer;
     transition: all 0.2s;
     display: inline-flex;
@@ -136,7 +137,7 @@
   button:active { transform: translateY(0); }
   button.alt { background: var(--gold); color: #fff; }
   button.alt:hover { background: #b45309; }
-  button.sm { padding: 6px 12px; font-size: 12px; border-radius: 6px; }
+  button.sm { padding: 5px 11px; font-size: 12px; border-radius: 6px; }
   button.bad { background: var(--bad); }
   button.bad:hover { background: #b91c1c; }
   button.outline { background: transparent; border: 1px solid var(--line); color: var(--ink); }
@@ -144,12 +145,12 @@
 
   nav {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
     background: rgba(226, 232, 240, 0.5);
-    padding: 6px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 16px;
     border: 1px solid var(--line);
   }
   nav button {
@@ -157,9 +158,9 @@
     color: var(--mut);
     border: none;
     font-weight: 600;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 13.5px;
+    padding: 7px 13px;
+    border-radius: 7px;
+    font-size: 13px;
   }
   nav button:hover { color: var(--ink); background: rgba(255, 255, 255, 0.6); }
   nav button.on {
@@ -170,28 +171,28 @@
 
   .stat-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
   }
   .stat-card {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 16px;
+    padding: 14px;
     box-shadow: var(--shadow-sm);
   }
-  .stat-card .label { font-size: 12.5px; color: var(--mut); font-weight: 600; display: block; margin-bottom: 4px; }
-  .stat-card .val { font-size: 20px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+  .stat-card .label { font-size: 12px; color: var(--mut); font-weight: 600; display: block; margin-bottom: 3px; }
+  .stat-card .val { font-size: 18px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
   .stat-card .val.ok { color: var(--ok); }
   .stat-card .val.bad { color: var(--bad); }
   .stat-card .val.gold { color: var(--gold); }
 
-  .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; align-items: end; }
-  .tablewrap { overflow-x: auto; margin-top: 8px; border-radius: 8px; border: 1px solid var(--line); }
-  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
-  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  th { background: rgba(248, 250, 252, 0.8); color: var(--mut); font-weight: 600; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; align-items: end; }
+  .tablewrap { overflow-x: auto; margin-top: 6px; border-radius: 8px; border: 1px solid var(--line); }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { background: rgba(248, 250, 252, 0.8); color: var(--mut); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: rgba(241, 245, 249, 0.5); }
 
@@ -199,9 +200,9 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    padding: 3px 10px;
+    padding: 3px 9px;
     border-radius: 99px;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 600;
   }
   .pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
@@ -221,23 +222,104 @@
     border-radius: 10px;
     padding: 14px 16px;
     margin-bottom: 16px;
-    font-size: 13.5px;
+    font-size: 13px;
     line-height: 1.5;
   }
-  .rekening-title { font-weight: 700; color: var(--primary-hover); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+  .rekening-title { font-weight: 700; color: var(--primary-hover); margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  .bank-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid var(--primary-border);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-top: 4px;
+    margin-right: 6px;
+    font-weight: 600;
+    font-size: 12.5px;
+  }
 
   /* Invoice card item for penghuni */
   .bill-card {
     border: 1px solid var(--line);
     border-radius: 10px;
     padding: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     background: var(--card);
     transition: all 0.2s;
   }
   .bill-card:hover { border-color: var(--primary-border); }
-  .bill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .bill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 6px; }
   .bill-amount { font-size: 18px; font-weight: 800; color: var(--ink); }
+
+  /* Upload zone mobile-first styling */
+  .upload-zone {
+    margin-top: 14px;
+    background: #f8fafc;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 10px;
+    padding: 14px;
+    transition: all 0.2s ease;
+  }
+  .upload-zone:focus-within {
+    border-color: var(--primary);
+    background: #f0fdf4;
+  }
+  .upload-zone-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .custom-file-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .custom-file-input input[type="file"] {
+    width: 100%;
+    padding: 8px 10px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--mut);
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .custom-file-input input[type="file"]::file-selector-button {
+    background: var(--navy);
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.2s;
+  }
+  .custom-file-input input[type="file"]::file-selector-button:hover {
+    background: var(--primary);
+  }
+  .btn-submit-bukti {
+    width: 100% !important;
+    padding: 10px 16px !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+  }
+  .btn-submit-bukti:hover {
+    background: var(--primary-hover) !important;
+  }
 
   /* Modal preview */
   .modal-backdrop {
@@ -250,15 +332,15 @@
   .modal-content {
     background: var(--card);
     border-radius: 14px;
-    max-width: 540px; width: 100%;
+    max-width: 520px; width: 100%;
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: var(--shadow-md);
-    padding: 20px;
+    padding: 18px;
   }
-  .modal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .modal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
   .modal-close {
-    background: none; border: none; font-size: 20px; color: var(--mut);
+    background: none; border: none; font-size: 18px; color: var(--mut);
     cursor: pointer; padding: 4px 8px; border-radius: 6px;
   }
   .modal-close:hover { background: var(--line); color: var(--ink); }
@@ -267,20 +349,26 @@
     position: fixed;
     bottom: 20px; left: 50%; transform: translateX(-50%);
     background: #1e293b; color: #fff;
-    padding: 12px 20px;
+    padding: 11px 18px;
     border-radius: 10px;
-    font-weight: 600; font-size: 13.5px;
+    font-weight: 600; font-size: 13px;
     box-shadow: var(--shadow-md);
     z-index: 1001;
     display: none;
+    white-space: nowrap;
+    max-width: 90vw;
   }
   .hide { display: none !important; }
 
   @media (max-width: 480px) {
-    header { padding: 12px 14px; }
-    header h1 { font-size: 15px; }
+    header { padding: 10px 12px; }
+    header h1 { font-size: 14.5px; }
+    .brand-icon { width: 28px; height: 28px; font-size: 14px; }
     .row { grid-template-columns: 1fr; }
-    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .stat-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stat-card { padding: 10px 12px; }
+    .stat-card .val { font-size: 16px; }
+    .card { padding: 14px; }
   }
 </style>
 </head>
@@ -300,15 +388,15 @@
 </header>
 
 <main>
-  <section id="login" class="card" style="max-width:400px;margin:50px auto">
-    <div style="text-align:center;margin-bottom:20px">
-      <div style="font-size:36px;margin-bottom:6px">🔐</div>
+  <section id="login" class="card" style="max-width:390px;margin:40px auto">
+    <div style="text-align:center;margin-bottom:18px">
+      <div style="font-size:32px;margin-bottom:4px">🔐</div>
       <h2 style="margin:0">Masuk ke Akun</h2>
-      <p style="color:var(--mut);font-size:13px;margin:4px 0 0">Kelola kos atau pantau tagihan bulanan Anda</p>
+      <p style="color:var(--mut);font-size:12.5px;margin:3px 0 0">Kelola kos atau pantau tagihan bulanan Anda</p>
     </div>
     <label>Username</label><input id="u" autocomplete="username" placeholder="Masukkan username">
     <label>Password</label><input id="p" type="password" autocomplete="current-password" placeholder="Masukkan password">
-    <p style="margin-top:20px"><button id="go" style="width:100%">Masuk Sekarang</button></p>
+    <p style="margin-top:18px"><button id="go" style="width:100%">Masuk Sekarang</button></p>
   </section>
 
   <section id="app" class="hide">
@@ -320,11 +408,11 @@
 <div id="bukti-modal" class="modal-backdrop hide">
   <div class="modal-content">
     <div class="modal-top">
-      <h3 style="margin:0;font-size:16px">Bukti Pembayaran</h3>
+      <h3 style="margin:0;font-size:15px;font-weight:700">Bukti Pembayaran</h3>
       <button class="modal-close" id="modal-close">✕</button>
     </div>
     <div id="modal-preview-body" style="text-align:center">
-      <p style="color:var(--mut)">Memuat bukti...</p>
+      <p style="color:var(--mut);font-size:13px">Memuat bukti...</p>
     </div>
   </div>
 </div>
@@ -488,7 +576,7 @@ const views = {
           </div>
           <div><label>Username Login</label><input id="pu" placeholder="Username"></div>
           <div><label>Password Awal</label><input id="pp" type="password" placeholder="Min. 8 karakter"></div>
-          <div style="padding-bottom:10px">
+          <div style="padding-bottom:8px">
             <label style="margin:0;display:flex;gap:6px;align-items:center;cursor:pointer"><input id="po" type="checkbox" style="width:auto"> Setuju kirim WA</label>
           </div>
           <button id="addp">Daftarkan Penghuni</button>
@@ -518,7 +606,7 @@ const views = {
     return `
       <div class="card">
         <h2>Pengingat WhatsApp Otomatis</h2>
-        <p style="color:var(--mut);margin-top:0;font-size:13.5px">
+        <p style="color:var(--mut);margin-top:0;font-size:13px">
           Sistem otomatis menyusun template pengingat jatuh tempo. Klik <b>Kirim</b> untuk membuka WhatsApp langsung ke nomor penghuni.
         </p>
         <button id="remind">▶ Jalankan Pemeriksaan Pengingat</button>
@@ -556,44 +644,89 @@ const views = {
           </div>
           <button id="rk">Tampilkan Rekap</button>
         </div>
-        <div id="rkout" style="margin-top:16px"></div>
+        <div id="rkout" style="margin-top:14px"></div>
       </div>`;
   },
 
   async "Tagihan saya"() {
     const rows = await api("/tagihan");
+    const namaPenghuni = rows[0]?.nama || $("#u")?.value || "Penghuni";
+    const kamarPenghuni = rows[0]?.kamar || "-";
+    const lunasCount = rows.filter(r => r.status === 'Lunas').length;
+    const unpaidCount = rows.filter(r => r.status !== 'Lunas').length;
+
+    // Perbarui label status di header
+    if ($("#who") && role === "penghuni") {
+      $("#who").textContent = namaPenghuni;
+    }
+
     return `
-      <div class="rekening-box">
-        <div class="rekening-title">💳 Panduan Pembayaran Sewa Kos</div>
-        Silakan transfer biaya tagihan sewa ke salah satu rekening pengelola berikut:<br>
-        • <b>Bank BCA</b>: <code>123-456-7890</code> a.n. Saung Neglasari<br>
-        • <b>Bank Mandiri</b>: <code>987-654-3210</code> a.n. Saung Neglasari<br>
-        <small style="color:var(--mut)">Setelah transfer, unggah foto bukti transfer di bawah ini agar tagihan diverifikasi oleh pengelola.</small>
+      <!-- Kartu Profil Penghuni -->
+      <div class="card" style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);color:#fff;border:none;margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <div style="width:48px;height:48px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-weight:700;flex-shrink:0">
+            ${esc(namaPenghuni[0].toUpperCase())}
+          </div>
+          <div style="flex:1;min-width:160px">
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:#94a3b8;font-weight:600">Profil Penghuni</div>
+            <div style="font-size:18px;font-weight:800;color:#f8fafc;margin:2px 0">${esc(namaPenghuni)}</div>
+            <div style="font-size:12.5px;color:#cbd5e1">
+              🏠 Kamar: <span style="background:rgba(16,185,129,0.2);color:#34d399;padding:2px 8px;border-radius:6px;font-weight:700">${esc(kamarPenghuni)}</span>
+              &nbsp;•&nbsp; <span>Status: <b style="color:#34d399">Aktif Menghuni</b></span>
+            </div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1);font-size:12.5px">
+          <div><span style="color:#94a3b8">Tagihan Lunas:</span> <b style="color:#34d399;margin-left:4px">${lunasCount} Periode</b></div>
+          <div><span style="color:#94a3b8">Belum Lunas:</span> <b style="color:${unpaidCount ? '#f87171' : '#34d399'};margin-left:4px">${unpaidCount} Periode</b></div>
+        </div>
       </div>
 
+      <!-- Kotak Rekening Pembayaran -->
+      <div class="rekening-box">
+        <div class="rekening-title">💳 Rekening Pembayaran Sewa Kos</div>
+        Silakan transfer biaya tagihan sewa ke salah satu rekening pengelola berikut:<br>
+        <div style="margin-top:6px">
+          <div class="bank-item">🏦 <b>BCA</b>: <code>123-456-7890</code> a.n. Saung Neglasari</div>
+          <div class="bank-item">🏦 <b>Mandiri</b>: <code>987-654-3210</code> a.n. Saung Neglasari</div>
+        </div>
+        <div style="color:var(--mut);font-size:12px;margin-top:8px">
+          *Setelah transfer, unggah foto/PDF bukti transfer di bawah ini agar diverifikasi oleh pengelola.
+        </div>
+      </div>
+
+      <!-- Daftar Tagihan -->
       <div class="card">
-        <h2>Tagihan Saya</h2>
+        <h2>Daftar Tagihan Saya</h2>
         ${rows.length ? rows.map(r => `
           <div class="bill-card">
             <div class="bill-header">
               <div>
-                <span style="font-size:13px;color:var(--mut);font-weight:600">Periode: ${r.periode}</span>
+                <span style="font-size:12.5px;color:var(--mut);font-weight:600">Periode: ${r.periode}</span>
                 <div class="bill-amount">${rp(r.jumlah)}</div>
               </div>
               <div>${pill(r.status)}</div>
             </div>
-            <div style="font-size:13px;color:var(--mut);margin-bottom:12px">
+            <div style="font-size:12.5px;color:var(--mut);margin-bottom:8px">
               📅 Jatuh Tempo: <b>${r.jatuh_tempo}</b>
             </div>
             ${["Belum dibayar","Ditolak"].includes(r.status) ? `
-              <div style="background:var(--bg);padding:12px;border-radius:8px;border:1px dashed var(--line)">
-                <label style="margin:0 0 6px">Unggah Bukti Transfer (JPG/PNG/PDF maks 2 MB):</label>
-                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-                  <input type="file" accept=".jpg,.jpeg,.png,.pdf" data-file="${r.id}" style="width:auto;flex:1">
-                  <button class="sm" data-up="${r.id}">Kirim Bukti</button>
+              <div class="upload-zone">
+                <div class="upload-zone-header">
+                  <span style="font-size:18px">📎</span>
+                  <div>
+                    <div style="font-weight:700;font-size:13px;color:var(--ink)">Unggah Bukti Transfer</div>
+                    <div style="font-size:11.5px;color:var(--mut)">Pilih foto JPG/PNG atau PDF (maks 2 MB)</div>
+                  </div>
                 </div>
+                <div class="custom-file-input">
+                  <input type="file" accept=".jpg,.jpeg,.png,.pdf" data-file="${r.id}">
+                </div>
+                <button class="btn-submit-bukti" data-up="${r.id}">
+                  <span>🚀</span> Kirim Bukti Transfer
+                </button>
               </div>` : ""}
-          </div>`).join("") : "<p style='color:var(--mut)'>Belum ada tagihan.</p>"}
+          </div>`).join("") : "<p style='color:var(--mut);font-size:13px'>Belum ada tagihan.</p>"}
       </div>`;
   },
 };
@@ -619,9 +752,9 @@ document.addEventListener("click", async e => {
       const blob = await r.blob();
       const objUrl = URL.createObjectURL(blob);
       if (blob.type.includes("pdf")) {
-        $("#modal-preview-body").innerHTML = `<iframe src="${objUrl}" style="width:100%;height:400px;border:none"></iframe>`;
+        $("#modal-preview-body").innerHTML = `<iframe src="${objUrl}" style="width:100%;height:380px;border:none"></iframe>`;
       } else {
-        $("#modal-preview-body").innerHTML = `<img src="${objUrl}" style="max-width:100%;max-height:420px;border-radius:8px">`;
+        $("#modal-preview-body").innerHTML = `<img src="${objUrl}" style="max-width:100%;max-height:400px;border-radius:8px">`;
       }
       $("#bukti-modal").classList.remove("hide");
     }
