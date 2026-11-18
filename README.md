@@ -3,7 +3,7 @@
 Aplikasi web responsif untuk mengelola kamar, penghuni, tagihan bulanan otomatis, pengingat WhatsApp, dan verifikasi bukti bayar.
 Dibuat mengikuti makalah Analis (Analis-UTS) dan slide presentasinya.
 
-## Tech stack (keputusan penulis — isi Tabel 3 makalah dengan ini)
+## Tech stack
 | Keputusan | Pilihan | Alasan singkat |
 |-----------|---------|----------------|
 | Back-end & API | Python 3 + Flask (monolit, route REST) | Sederhana, route per-role mudah ditegakkan |
